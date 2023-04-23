@@ -1,10 +1,10 @@
 package com.pauloreis.catalog.admin.application;
 
-import com.pauloreis.catalog.admin.domain.Category;
+import com.pauloreis.catalog.admin.domain.category.Category;
 
 public class UseCase {
 
-   public Category execute() {
-      return new Category();
-   }
+  public Category execute() {
+    return Category.newCategory(null, null, false);
+  }
 }
