@@ -5,6 +5,6 @@ import com.pauloreis.catalog.admin.domain.category.Category;
 public class UseCase {
 
   public Category execute() {
-    return Category.newCategory(null, null, false);
+    return Category.newCategory("Filmes", "A categoria mais assistida", true);
   }
 }
