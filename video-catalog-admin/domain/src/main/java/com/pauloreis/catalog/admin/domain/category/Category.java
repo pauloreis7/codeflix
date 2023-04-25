@@ -3,6 +3,7 @@ package com.pauloreis.catalog.admin.domain.category;
 import java.time.Instant;
 
 import com.pauloreis.catalog.admin.domain.AggregateRoot;
+import com.pauloreis.catalog.admin.domain.validation.ValidationHandler;
 
 public class Category extends AggregateRoot<CategoryID> {
     private String name;
@@ -37,6 +38,11 @@ public class Category extends AggregateRoot<CategoryID> {
         final var now = Instant.now();
 
         return new Category(id, aName, aDescription, isActive, now, now, null);
+    }
+
+    @Override
+    public void validate(final ValidationHandler handler) {
+        new CategoryValidator(this, handler).validate();
     }
 
     public CategoryID getId() {
