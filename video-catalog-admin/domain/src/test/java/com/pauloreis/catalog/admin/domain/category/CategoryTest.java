@@ -10,7 +10,7 @@ public class CategoryTest {
 
   @Test
   public void givenAValidParams_whenCallNewCategory_thenInstantiateACategory() {
-    final var expectedName = "name";
+    final var expectedName = "Movies";
     final var expectedDescription = "Some description";
     final var expectedIsActive = true;
 
