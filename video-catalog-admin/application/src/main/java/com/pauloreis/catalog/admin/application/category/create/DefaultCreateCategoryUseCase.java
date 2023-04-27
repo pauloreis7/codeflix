@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import com.pauloreis.catalog.admin.domain.category.Category;
 import com.pauloreis.catalog.admin.domain.category.CategoryGateway;
-import com.pauloreis.catalog.admin.domain.validation.handler.ThrowsValidationHandler;
+import com.pauloreis.catalog.admin.domain.validation.handler.Notification;
 
 public class DefaultCreateCategoryUseCase extends CreateCategoryUseCase {
 
@@ -20,8 +20,11 @@ public class DefaultCreateCategoryUseCase extends CreateCategoryUseCase {
     final var aDescription = aCommand.description();
     final var isActive = aCommand.isActive();
 
+    final var notification = Notification.create();
+
     final var aCategory = Category.newCategory(aName, aDescription, isActive);
-    aCategory.validate(new ThrowsValidationHandler());
+
+    aCategory.validate(notification);
 
     final var createdCategory = categoryGateway.create(aCategory);
 
