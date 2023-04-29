@@ -1,12 +1,17 @@
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'org.springframework.boot' version '2.6.7'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 group 'com.pauloreis.catalog.admin.infrastructure'
 
+bootJar {
+    archiveFileName = 'application.jar'
+    destinationDirectory.set(file("${rootProject.buildDir}/libs"))
+}
+
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
@@ -14,9 +19,14 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":application"))
 
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
-
     implementation 'com.google.guava:guava:31.1-jre'
+
+    implementation('org.springframework.boot:spring-boot-starter-web') {
+        exclude module: 'spring-boot-starter-tomcat'
+    }
+    implementation('org.springframework.boot:spring-boot-starter-undertow')
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
 application {
