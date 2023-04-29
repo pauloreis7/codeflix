@@ -12,7 +12,7 @@ public class DefaultGetCategoryByIdUseCase extends GetCategoryByIdUseCase {
 
   private final CategoryGateway categoryGateway;
 
-  DefaultGetCategoryByIdUseCase(final CategoryGateway categoryGateway) {
+  public DefaultGetCategoryByIdUseCase(final CategoryGateway categoryGateway) {
     this.categoryGateway = Objects.requireNonNull(categoryGateway);
   }
 
