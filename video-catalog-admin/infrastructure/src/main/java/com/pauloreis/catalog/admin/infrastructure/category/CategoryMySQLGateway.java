@@ -9,6 +9,7 @@ import com.pauloreis.catalog.admin.domain.category.CategoryGateway;
 import com.pauloreis.catalog.admin.domain.category.CategoryID;
 import com.pauloreis.catalog.admin.domain.category.CategorySearchQuery;
 import com.pauloreis.catalog.admin.domain.pagination.Pagination;
+import com.pauloreis.catalog.admin.infrastructure.category.persistence.CategoryJpaEntity;
 import com.pauloreis.catalog.admin.infrastructure.category.persistence.CategoryRepository;
 
 @Service
@@ -21,31 +22,30 @@ public class CategoryMySQLGateway implements CategoryGateway {
   }
 
   @Override
-  public Category create(Category aCategory) {
+  public Category create(final Category aCategory) {
+    return repository.save(CategoryJpaEntity.from(aCategory)).toAggregate();
+  }
+
+  @Override
+  public void deleteById(final CategoryID anId) {
+    // TODO Auto-generated method stub
+
+  }
+
+  @Override
+  public Pagination<Category> findAll(final CategorySearchQuery aQuery) {
     // TODO Auto-generated method stub
     return null;
   }
 
   @Override
-  public void deleteById(CategoryID anId) {
-    // TODO Auto-generated method stub
-
-  }
-
-  @Override
-  public Pagination<Category> findAll(CategorySearchQuery aQuery) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
-  @Override
-  public Optional<Category> findById(CategoryID anId) {
+  public Optional<Category> findById(final CategoryID anId) {
     // TODO Auto-generated method stub
     return Optional.empty();
   }
 
   @Override
-  public Category update(Category aCategory) {
+  public Category update(final Category aCategory) {
     // TODO Auto-generated method stub
     return null;
   }
