@@ -44,8 +44,7 @@ public class CategoryMySQLGateway implements CategoryGateway {
 
   @Override
   public Optional<Category> findById(final CategoryID anId) {
-    // TODO Auto-generated method stub
-    return Optional.empty();
+    return repository.findById(anId.getValue()).map(CategoryJpaEntity::toAggregate);
   }
 
   @Override
