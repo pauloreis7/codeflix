@@ -28,8 +28,12 @@ public class CategoryMySQLGateway implements CategoryGateway {
 
   @Override
   public void deleteById(final CategoryID anId) {
-    // TODO Auto-generated method stub
+    final String anIdValue = anId.getValue();
+    final boolean checkCategoryExists = repository.existsById(anIdValue);
 
+    if (checkCategoryExists) {
+      repository.deleteById(anIdValue);
+    }
   }
 
   @Override
