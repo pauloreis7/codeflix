@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.pauloreis.catalog.admin.MySQLGatewayTest;
 import com.pauloreis.catalog.admin.domain.category.Category;
 import com.pauloreis.catalog.admin.domain.category.CategoryID;
 import com.pauloreis.catalog.admin.domain.category.CategorySearchQuery;
-import com.pauloreis.catalog.admin.infrastructure.MySQLGatewayTest;
 import com.pauloreis.catalog.admin.infrastructure.category.persistence.CategoryJpaEntity;
 import com.pauloreis.catalog.admin.infrastructure.category.persistence.CategoryRepository;
 

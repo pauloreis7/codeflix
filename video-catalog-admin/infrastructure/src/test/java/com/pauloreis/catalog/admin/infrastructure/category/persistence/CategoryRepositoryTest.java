@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 
+import com.pauloreis.catalog.admin.MySQLGatewayTest;
 import com.pauloreis.catalog.admin.domain.category.Category;
-import com.pauloreis.catalog.admin.infrastructure.MySQLGatewayTest;
 
 @MySQLGatewayTest
 public class CategoryRepositoryTest {
