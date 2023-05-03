@@ -9,7 +9,7 @@ public class DefaultDeleteCategoryUseCase extends DeleteCategoryUseCase {
 
   private final CategoryGateway categoryGateway;
 
-  DefaultDeleteCategoryUseCase(final CategoryGateway categoryGateway) {
+  public DefaultDeleteCategoryUseCase(final CategoryGateway categoryGateway) {
     this.categoryGateway = Objects.requireNonNull(categoryGateway);
   }
 

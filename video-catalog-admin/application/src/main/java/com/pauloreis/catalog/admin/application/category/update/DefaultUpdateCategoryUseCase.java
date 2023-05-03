@@ -19,7 +19,7 @@ public class DefaultUpdateCategoryUseCase extends UpdateCategoryUseCase {
 
   private CategoryGateway categoryGateway;
 
-  DefaultUpdateCategoryUseCase(final CategoryGateway categoryGateway) {
+  public DefaultUpdateCategoryUseCase(final CategoryGateway categoryGateway) {
     this.categoryGateway = Objects.requireNonNull(categoryGateway);
   }
 
