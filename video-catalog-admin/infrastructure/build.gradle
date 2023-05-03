@@ -29,6 +29,8 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":application"))
 
+    implementation('io.vavr:vavr:0.10.4')
+
     implementation 'com.google.guava:guava:31.1-jre'
 
     implementation('mysql:mysql-connector-java')
