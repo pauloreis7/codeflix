@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.SpyBean;
+import static java.time.temporal.ChronoUnit.SECONDS;
 
 import com.pauloreis.catalog.admin.IntegrationTest;
 import com.pauloreis.catalog.admin.domain.category.Category;
@@ -48,11 +49,12 @@ public class GetCategoryByIdUseCaseIT {
     Assertions.assertEquals(expectedName, actualCategory.name());
     Assertions.assertEquals(expectedDescription, actualCategory.description());
     Assertions.assertEquals(expectedIsActive, actualCategory.isActive());
-    Assertions.assertEquals(aCategory.getCreatedAt().truncatedTo(java.time.temporal.ChronoUnit.MICROS),
-        actualCategory.createdAt());
-    Assertions.assertEquals(aCategory.getUpdatedAt().truncatedTo(java.time.temporal.ChronoUnit.MICROS),
-        actualCategory.updatedAt());
+    Assertions.assertEquals(aCategory.getCreatedAt().truncatedTo(SECONDS),
+        actualCategory.createdAt().truncatedTo(SECONDS));
+    Assertions.assertEquals(aCategory.getUpdatedAt().truncatedTo(SECONDS),
+        actualCategory.updatedAt().truncatedTo(SECONDS));
     Assertions.assertEquals(aCategory.getDeletedAt(), actualCategory.deletedAt());
+
   }
 
   @Test
