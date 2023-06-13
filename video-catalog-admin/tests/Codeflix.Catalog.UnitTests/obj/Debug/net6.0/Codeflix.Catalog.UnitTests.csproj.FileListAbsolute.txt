@@ -103,3 +103,4 @@
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/System.Configuration.ConfigurationManager.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/System.Security.Cryptography.ProtectedData.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/Bogus.dll
