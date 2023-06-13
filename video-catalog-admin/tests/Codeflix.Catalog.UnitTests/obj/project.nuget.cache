@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "reuyms6C+754+I8Z9/EN88Sz2a01/C3tkdFV36LRxvXhJpvbN8JVOvkW7lvfcWjJO9nzw11iR3glRi/R/TSk5g==",
+  "dgSpecHash": "9A3zpGn+Yjpuyme6y1BWpGInQKCwao2jM87MopQxdh8E12fQ9NuSNxU91kULu6YzSM9dhh0eWr94wbW5hL0W2A==",
   "success": true,
   "projectFilePath": "/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/Codeflix.Catalog.UnitTests.csproj",
   "expectedPackageFiles": [
     "/home/paulo/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
+    "/home/paulo/.nuget/packages/fluentassertions/6.11.0/fluentassertions.6.11.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/microsoft.codecoverage/17.1.0/microsoft.codecoverage.17.1.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/microsoft.csharp/4.0.1/microsoft.csharp.4.0.1.nupkg.sha512",
     "/home/paulo/.nuget/packages/microsoft.net.test.sdk/17.1.0/microsoft.net.test.sdk.17.1.0.nupkg.sha512",
@@ -36,6 +37,7 @@
     "/home/paulo/.nuget/packages/system.buffers/4.3.0/system.buffers.4.3.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/system.collections/4.3.0/system.collections.4.3.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/system.collections.concurrent/4.3.0/system.collections.concurrent.4.3.0.nupkg.sha512",
+    "/home/paulo/.nuget/packages/system.configuration.configurationmanager/4.4.0/system.configuration.configurationmanager.4.4.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/system.console/4.3.0/system.console.4.3.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/system.diagnostics.debug/4.3.0/system.diagnostics.debug.4.3.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/system.diagnostics.diagnosticsource/4.3.0/system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
@@ -78,6 +80,7 @@
     "/home/paulo/.nuget/packages/system.security.cryptography.encoding/4.3.0/system.security.cryptography.encoding.4.3.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/system.security.cryptography.openssl/4.3.0/system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/system.security.cryptography.primitives/4.3.0/system.security.cryptography.primitives.4.3.0.nupkg.sha512",
+    "/home/paulo/.nuget/packages/system.security.cryptography.protecteddata/4.4.0/system.security.cryptography.protecteddata.4.4.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/system.security.cryptography.x509certificates/4.3.0/system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/home/paulo/.nuget/packages/system.text.encoding.extensions/4.3.0/system.text.encoding.extensions.4.3.0.nupkg.sha512",
