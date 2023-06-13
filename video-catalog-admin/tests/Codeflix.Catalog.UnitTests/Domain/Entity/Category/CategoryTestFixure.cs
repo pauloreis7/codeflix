@@ -1,4 +1,4 @@
-using Codeflix.Catalog.UnitTests.UnitTests.Common;
+using Codeflix.Catalog.UnitTests.Domain.Entity.Common;
 using DomainEntity = Codeflix.Catalog.Domain.Entity;
 
 namespace Codeflix.Catalog.UnitTests.Domain.Entity.Category;
