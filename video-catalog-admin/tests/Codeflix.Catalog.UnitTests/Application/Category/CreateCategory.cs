@@ -1,5 +1,6 @@
-using Codeflix.Catalog.Domain.Repository;
 using Moq;
+using Codeflix.Catalog.Application.Interfaces;
+using Codeflix.Catalog.Domain.Repository;
 using DomainEntity = Codeflix.Catalog.Domain.Entity;
 using UseCases = Codeflix.Catalog.Application.UseCases.CreateCategory;
 
@@ -12,7 +13,7 @@ public class CreateCategoryTest
   public async void CreateCategory()
   {
     var repositoryMock = new Mock<ICategoryRepository>();
-    var unitOfWorkMock = new Mock<IUnityOfWork>();
+    var unitOfWorkMock = new Mock<IUnitOfWork>();
     var useCase = new UseCases.CreateCategory(
       repositoryMock.Object,
       unitOfWorkMock.Object
