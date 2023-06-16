@@ -4,7 +4,7 @@ public class CreateCategoryInput
 {
   public CreateCategoryInput(
     string name,
-    string? description,
+    string? description = null,
     bool isActive = true
   )
   {
