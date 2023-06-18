@@ -117,10 +117,10 @@ public class CreateCategoryTest
     output.CreatedAt.Should().NotBeSameDateAs(default(DateTime));
   }
 
-  [Theory(DisplayName = nameof(ThrowWhenCantInstantiateAggregate))]
+  [Theory(DisplayName = nameof(ThrowWhenCantInstantiateCategory))]
   [Trait("Application", "CreateCategory - Use Cases")]
   [MemberData(nameof(GetInvalidInputs))]
-  public async void ThrowWhenCantInstantiateAggregate(
+  public async void ThrowWhenCantInstantiateCategory(
     CreateCategoryInput input,
     string exceptionMessage
   )
