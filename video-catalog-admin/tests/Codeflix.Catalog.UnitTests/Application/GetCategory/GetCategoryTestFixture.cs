@@ -3,7 +3,7 @@ using Codeflix.Catalog.Domain.Repository;
 using Codeflix.Catalog.UnitTests.Domain.Entity.Common;
 using Moq;
 
-namespace FC.Codeflix.Catalog.UnitTests.Application.GetCategory;
+namespace Codeflix.Catalog.UnitTests.Application.GetCategory;
 
 [CollectionDefinition(nameof(GetCategoryTestFixture))]
 public class GetCategoryTestFixtureCollection :

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3PwG+yXyWRXOZw8WOvkDe21CIcqKCH+dIIGSl0ZukKK5ovDCSVDm/975yAdnSHJnnqRCNzoq1u6dkMKDl8I01w==",
+  "dgSpecHash": "0Dyo0MAPAKOr/hc3HB+mnsaMeYpwHQ272bmFXpKBpG3l3tOe+Hr+fMYfaM1q3w0cYmDCEz04FYYH8rwDx/Tfmg==",
   "success": true,
   "projectFilePath": "/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/Codeflix.Catalog.UnitTests.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/home/paulo/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/paulo/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
     "/home/paulo/.nuget/packages/fluentassertions/6.11.0/fluentassertions.6.11.0.nupkg.sha512",
+    "/home/paulo/.nuget/packages/fluentvalidation/11.5.2/fluentvalidation.11.5.2.nupkg.sha512",
     "/home/paulo/.nuget/packages/mediatr/12.0.1/mediatr.12.0.1.nupkg.sha512",
     "/home/paulo/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/paulo/.nuget/packages/microsoft.codecoverage/17.1.0/microsoft.codecoverage.17.1.0.nupkg.sha512",

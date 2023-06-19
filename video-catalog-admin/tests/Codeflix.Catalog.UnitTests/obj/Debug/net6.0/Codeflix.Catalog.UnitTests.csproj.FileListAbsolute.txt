@@ -10,6 +10,7 @@
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/Bogus.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/Castle.Core.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/FluentAssertions.dll
+/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/FluentValidation.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/MediatR.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/MediatR.Contracts.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
