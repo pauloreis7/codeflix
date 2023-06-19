@@ -13,7 +13,8 @@ public class GetCategoryTestFixtureCollection :
 public class GetCategoryTestFixture : BaseFixture
 {
   public Mock<ICategoryRepository> GetRepositoryMock()
-      => new();
+    => new();
+
   public string GetValidCategoryName()
   {
     var categoryName = "";

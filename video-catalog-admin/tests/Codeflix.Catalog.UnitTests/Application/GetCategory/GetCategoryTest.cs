@@ -1,9 +1,11 @@
 using Moq;
+using FC.Codeflix.Catalog.UnitTests.Application.GetCategory;
 using UseCase = Codeflix.Catalog.Application.UseCases.Category.GetCategory;
+using FluentAssertions;
 
 namespace Codeflix.Catalog.UnitTests.Application.GetCategory;
 
-[Collection(nameof(GetCategoryTest))]
+[Collection(nameof(GetCategoryTestFixture))]
 public class GetCategoryTest
 {
   private readonly GetCategoryTestFixture _fixture;
@@ -25,7 +27,7 @@ public class GetCategoryTest
     )).ReturnsAsync(exampleCategory);
 
     var input = new UseCase.GetCategoryInput(exampleCategory.Id);
-    var useCase = new UseCase.GetCategory(repositoryMock);
+    var useCase = new UseCase.GetCategory(repositoryMock.Object);
 
     var output = await useCase.Handle(input, CancellationToken.None);
 
