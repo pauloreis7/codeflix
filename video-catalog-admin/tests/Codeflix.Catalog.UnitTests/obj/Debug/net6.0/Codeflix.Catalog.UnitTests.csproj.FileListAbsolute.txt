@@ -1,4 +1,9 @@
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/CoverletSourceRootsMapping
+/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.csproj.AssemblyReference.cache
+/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
+/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.AssemblyInfoInputs.cache
+/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.AssemblyInfo.cs
+/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.csproj.CoreCompileInputs.cache
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/xunit.runner.reporters.netcoreapp10.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/xunit.runner.utility.netcoreapp10.dll
@@ -104,11 +109,6 @@
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/Codeflix.Catalog.Domain.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/Codeflix.Catalog.Domain.pdb
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/bin/Debug/net6.0/Codeflix.Catalog.Application.pdb
-/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.csproj.AssemblyReference.cache
-/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
-/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.AssemblyInfoInputs.cache
-/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.AssemblyInfo.cs
-/home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.csproj.CoreCompileInputs.cache
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.csproj.CopyComplete
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/Codeflix.Catalog.UnitTests.dll
 /home/paulo/www/codeflix/video-catalog-admin/tests/Codeflix.Catalog.UnitTests/obj/Debug/net6.0/refint/Codeflix.Catalog.UnitTests.dll
