@@ -41,6 +41,16 @@ public class UpdateCategoryTestFixture : BaseFixture
 
   public bool GetRandomBoolean() => (new Random()).NextDouble() < 0.5;
 
+  public string GetInvalidTooLongDescription()
+  {
+    var tooLongDescriptionForCategory = Faker.Commerce.ProductDescription();
+
+    while (tooLongDescriptionForCategory.Length <= 10_000)
+      tooLongDescriptionForCategory = $"{tooLongDescriptionForCategory} {Faker.Commerce.ProductDescription()}";
+
+    return tooLongDescriptionForCategory;
+  }
+
   public Category GetValidCategory()
     => new Category(
       GetValidCategoryName(),

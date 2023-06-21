@@ -1,5 +1,7 @@
 using Codeflix.Catalog.Application.Exceptions;
 using Codeflix.Catalog.Application.UseCases.Category.Common;
+using Codeflix.Catalog.Application.UseCases.Category.UpdateCategory;
+using Codeflix.Catalog.Domain.Exceptions;
 using FluentAssertions;
 using Moq;
 using UseCase = Codeflix.Catalog.Application.UseCases.Category.UpdateCategory;
@@ -153,5 +155,59 @@ public class UpdateCategoryTest
       input.Id,
       It.IsAny<CancellationToken>()
     ), Times.Once);
+  }
+
+  [Theory(DisplayName = nameof(ThrowWhenCantUpdateCategory))]
+  [Trait("Application", "UpdateCategory - Use Cases")]
+  [MemberData(nameof(GetInvalidInputs))]
+  public async Task ThrowWhenCantUpdateCategory(
+    UpdateCategoryInput input,
+    string expectedExceptionMessage
+  )
+  {
+    var exampleCategory = _fixture.GetValidCategory();
+    input.Id = exampleCategory.Id;
+    var repositoryMock = _fixture.GetRepositoryMock();
+    var unitOfWorkMock = _fixture.GetUnitOfWorkMock();
+    repositoryMock.Setup(x => x.Get(exampleCategory.Id, It.IsAny<CancellationToken>()))
+      .ReturnsAsync(exampleCategory);
+    var useCase = new UseCase.UpdateCategory(
+      repositoryMock.Object,
+      unitOfWorkMock.Object
+    );
+
+    var task = async ()
+      => await useCase.Handle(input, CancellationToken.None);
+
+    await task.Should().ThrowAsync<EntityValidationException>()
+      .WithMessage(expectedExceptionMessage);
+
+    repositoryMock.Verify(x => x.Get(
+      exampleCategory.Id,
+      It.IsAny<CancellationToken>()
+    ), Times.Once);
+  }
+
+  private static IEnumerable<object[]> GetInvalidInputs()
+  {
+    var fixture = new UpdateCategoryTestFixture();
+    var invalidInputsList = new List<object[]>();
+    var invalidInputShortName = fixture.GetValidInput();
+
+    invalidInputShortName.Name = "ab";
+
+    invalidInputsList.Add(new object[] {
+      invalidInputShortName,
+      "Name should be at least 3 characters long"
+    });
+
+    var invalidInputDescriptionNull = fixture.GetValidInput();
+    invalidInputDescriptionNull.Description = fixture.GetInvalidTooLongDescription();
+    invalidInputsList.Add(new object[] {
+      invalidInputDescriptionNull,
+      "Description should be less or equal 10000 characters long"
+    });
+
+    return invalidInputsList;
   }
 }
