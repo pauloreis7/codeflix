@@ -1,4 +1,5 @@
 using Codeflix.Catalog.Application.Interfaces;
+using Codeflix.Catalog.Application.UseCases.Category.UpdateCategory;
 using Codeflix.Catalog.Domain.Entity;
 using Codeflix.Catalog.Domain.Repository;
 using Codeflix.Catalog.UnitTests.Domain.Entity.Common;
@@ -38,12 +39,20 @@ public class UpdateCategoryTestFixture : BaseFixture
     return categoryDescription;
   }
 
-  public bool getRandomBoolean() => (new Random()).NextDouble() < 0.5;
+  public bool GetRandomBoolean() => (new Random()).NextDouble() < 0.5;
 
   public Category GetValidCategory()
     => new Category(
       GetValidCategoryName(),
       GetValidCategoryDescription(),
-      getRandomBoolean()
+      GetRandomBoolean()
+    );
+
+  public UpdateCategoryInput GetValidInput(Guid? id = null)
+    => new(
+      id ?? Guid.NewGuid(),
+      GetValidCategoryName(),
+      GetValidCategoryDescription(),
+      GetRandomBoolean()
     );
 }

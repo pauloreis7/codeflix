@@ -18,9 +18,9 @@ public class UpdateCategory : IUpdateCategory
 
     category.Update(request.Name, request.Description);
 
-    if (request.IsActive != category.IsActive)
+    if (request.IsActive is not null && request.IsActive != category.IsActive)
     {
-      if (request.IsActive) category.Activate();
+      if ((bool)request.IsActive) category.Activate();
       else category.Deactivate();
     }
 
