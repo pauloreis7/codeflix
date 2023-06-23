@@ -6,7 +6,7 @@ using FluentAssertions;
 using Moq;
 using UseCase = Codeflix.Catalog.Application.UseCases.Category.UpdateCategory;
 
-namespace Codeflix.Catalog.UnitTests.Application.UpdateCategory;
+namespace Codeflix.Catalog.UnitTests.Application.Category.UpdateCategory;
 
 [Collection(nameof(UpdateCategoryTestFixture))]
 public class UpdateCategoryTest
@@ -22,7 +22,7 @@ public class UpdateCategoryTest
   {
     var repositoryMock = _fixture.GetRepositoryMock();
     var unitOfWorkMock = _fixture.GetUnitOfWorkMock();
-    var validCategory = _fixture.GetValidCategory();
+    var validCategory = _fixture.GetExampleCategory();
     repositoryMock.Setup(x => x.Get(
       validCategory.Id,
       It.IsAny<CancellationToken>())
@@ -61,7 +61,7 @@ public class UpdateCategoryTest
   {
     var repositoryMock = _fixture.GetRepositoryMock();
     var unitOfWorkMock = _fixture.GetUnitOfWorkMock();
-    var validCategory = _fixture.GetValidCategory();
+    var validCategory = _fixture.GetExampleCategory();
     repositoryMock.Setup(x => x.Get(
       validCategory.Id,
       It.IsAny<CancellationToken>())
@@ -99,7 +99,7 @@ public class UpdateCategoryTest
   {
     var repositoryMock = _fixture.GetRepositoryMock();
     var unitOfWorkMock = _fixture.GetUnitOfWorkMock();
-    var validCategory = _fixture.GetValidCategory();
+    var validCategory = _fixture.GetExampleCategory();
     repositoryMock.Setup(x => x.Get(
       validCategory.Id,
       It.IsAny<CancellationToken>())
@@ -165,7 +165,7 @@ public class UpdateCategoryTest
     string expectedExceptionMessage
   )
   {
-    var exampleCategory = _fixture.GetValidCategory();
+    var exampleCategory = _fixture.GetExampleCategory();
     input.Id = exampleCategory.Id;
     var repositoryMock = _fixture.GetRepositoryMock();
     var unitOfWorkMock = _fixture.GetUnitOfWorkMock();

@@ -5,7 +5,7 @@ using FluentAssertions;
 using Codeflix.Catalog.Application.UseCases.Category.CreateCategory;
 using Codeflix.Catalog.Domain.Exceptions;
 
-namespace Codeflix.Catalog.UnitTests.Application.CreateCategory;
+namespace Codeflix.Catalog.UnitTests.Application.Category.CreateCategory;
 
 [Collection(nameof(CreateCategoryTestFixture))]
 public class CreateCategoryTest
@@ -13,7 +13,7 @@ public class CreateCategoryTest
   private readonly CreateCategoryTestFixture _fixture;
 
   public CreateCategoryTest(CreateCategoryTestFixture fixture)
-      => _fixture = fixture;
+    => _fixture = fixture;
 
   [Fact(DisplayName = nameof(CreateCategory))]
   [Trait("Application", "CreateCategory - Use Cases")]
