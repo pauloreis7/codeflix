@@ -21,6 +21,9 @@ public class CategoryRepository : ICategoryRepository
   )
     => await _categories.AddAsync(aggregate, cancellationToken);
 
+  public Task Update(Category aggregate, CancellationToken cancellationToken)
+    => Task.FromResult(_categories.Update(aggregate));
+
   public Task Delete(Category aggregate, CancellationToken cancellationToken)
   {
     throw new NotImplementedException();
@@ -39,11 +42,6 @@ public class CategoryRepository : ICategoryRepository
   }
 
   public Task<SearchOutput<Category>> Search(SearchInput input, CancellationToken cancellationToken)
-  {
-    throw new NotImplementedException();
-  }
-
-  public Task Update(Category aggregate, CancellationToken cancellationToken)
   {
     throw new NotImplementedException();
   }
