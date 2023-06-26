@@ -15,15 +15,6 @@ public class CategoryRepository : ICategoryRepository
   public CategoryRepository(CodeflixCatalogDbContext context)
     => _context = context;
 
-  public async Task Insert(
-    Category aggregate,
-    CancellationToken cancellationToken
-  )
-    => await _categories.AddAsync(aggregate, cancellationToken);
-
-  public Task Update(Category aggregate, CancellationToken cancellationToken)
-    => Task.FromResult(_categories.Update(aggregate));
-
   public async Task<Category> Get(Guid id, CancellationToken cancellationToken)
   {
     var category = await _categories.AsNoTracking().FirstOrDefaultAsync(
@@ -36,12 +27,18 @@ public class CategoryRepository : ICategoryRepository
     return category!;
   }
 
-  public Task Delete(Category aggregate, CancellationToken cancellationToken)
-  {
-    throw new NotImplementedException();
-  }
+  public async Task Insert(
+    Category aggregate,
+    CancellationToken cancellationToken
+  )
+    => await _categories.AddAsync(aggregate, cancellationToken);
+
+  public Task Update(Category aggregate, CancellationToken _)
+    => Task.FromResult(_categories.Update(aggregate));
 
 
+  public Task Delete(Category aggregate, CancellationToken _)
+    => Task.FromResult(_categories.Remove(aggregate));
 
   public Task<SearchOutput<Category>> Search(SearchInput input, CancellationToken cancellationToken)
   {
