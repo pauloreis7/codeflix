@@ -1,18 +1,10 @@
-using Codeflix.Catalog.Application.Interfaces;
-using Codeflix.Catalog.Domain.Repository;
 using DomainEntity = Codeflix.Catalog.Domain.Entity;
-using Moq;
-using Codeflix.Catalog.UnitTests.Domain.Entity.Common;
+using Codeflix.Catalog.IntegrationTests.Common;
 
-namespace Codeflix.Catalog.UnitTests.Application.Category.Common;
+namespace Codeflix.Catalog.IntegrationTests.Application.UseCases.Category.Common;
 
-public abstract class CategoryUseCasesBaseFixture : BaseFixture
+public class CategoryUseCasesBaseFixture : BaseFixture
 {
-
-  public Mock<ICategoryRepository> GetRepositoryMock() => new();
-
-  public Mock<IUnitOfWork> GetUnitOfWorkMock() => new();
-
   public string GetValidCategoryName()
   {
     var categoryName = "";
@@ -32,8 +24,7 @@ public abstract class CategoryUseCasesBaseFixture : BaseFixture
     return categoryDescription;
   }
 
-  public bool GetRandomBoolean()
-    => new Random().NextDouble() < 0.5;
+  public static bool GetRandomBoolean() => new Random().NextDouble() < 0.5;
 
   public DomainEntity.Category GetExampleCategory()
     => new(
@@ -41,4 +32,8 @@ public abstract class CategoryUseCasesBaseFixture : BaseFixture
       GetValidCategoryDescription(),
       GetRandomBoolean()
     );
+
+  public List<DomainEntity.Category> GetExampleCategoriesList(int length = 10)
+    => Enumerable.Range(1, length).Select(_ => GetExampleCategory()).ToList();
+
 }

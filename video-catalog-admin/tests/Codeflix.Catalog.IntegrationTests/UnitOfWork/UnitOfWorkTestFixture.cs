@@ -25,8 +25,7 @@ public class UnitOfWorkTestFixture : BaseFixture
     var categoryDescription =
       Faker.Commerce.ProductDescription();
     if (categoryDescription.Length > 10_000)
-      categoryDescription =
-        categoryDescription[..10_000];
+      categoryDescription = categoryDescription[..10_000];
     return categoryDescription;
   }
 
