@@ -17,15 +17,15 @@ public class UnitOfWorkTest
   public async Task Commit()
   {
     var dbContext = UnitOfWorkTestFixture.CreateDbContext();
-    var examplecategoriesList = _fixture.GetExampleCategoriesList();
-    await dbContext.AddRangeAsync(examplecategoriesList);
+    var exampleCategoriesList = _fixture.GetExampleCategoriesList();
+    await dbContext.AddRangeAsync(exampleCategoriesList);
     var unitOfWork = new UnitOfWorkInfra.UnitOfWork(dbContext);
 
     await unitOfWork.Commit(CancellationToken.None);
 
     var assertDbContext = UnitOfWorkTestFixture.CreateDbContext(true);
     var savedCategories = assertDbContext.Categories.AsNoTracking().ToList();
-    savedCategories.Should().HaveCount(examplecategoriesList.Count);
+    savedCategories.Should().HaveCount(exampleCategoriesList.Count);
   }
 
 
