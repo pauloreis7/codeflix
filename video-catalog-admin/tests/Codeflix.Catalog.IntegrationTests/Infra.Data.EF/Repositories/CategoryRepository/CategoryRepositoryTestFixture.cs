@@ -1,8 +1,6 @@
 using Codeflix.Catalog.Domain.Entity;
 using Codeflix.Catalog.Domain.SeedWork.SearchableRepository;
-using Codeflix.Catalog.Infra.Data.EF;
 using Codeflix.Catalog.IntegrationTests.Common;
-using Microsoft.EntityFrameworkCore;
 
 namespace Codeflix.Catalog.IntegrationTests.Infra.Data.EF.Repositories.CategoryRepository;
 
@@ -32,13 +30,13 @@ public class CategoryRepositoryTestFixture : BaseFixture
     return categoryDescription;
   }
 
-  public bool getRandomBoolean() => new Random().NextDouble() < 0.5;
+  public static bool GetRandomBoolean() => new Random().NextDouble() < 0.5;
 
   public Category GetExampleCategory()
     => new(
       GetValidCategoryName(),
       GetValidCategoryDescription(),
-      getRandomBoolean()
+      GetRandomBoolean()
     );
 
   public List<Category> GetExampleCategoriesList(int length = 10)
@@ -72,19 +70,5 @@ public class CategoryRepositoryTestFixture : BaseFixture
     };
 
     return orderedEnumerable.ToList();
-  }
-
-  public static CodeflixCatalogDbContext CreateDbContext(bool preserveData = false)
-  {
-    var context = new CodeflixCatalogDbContext(
-      new DbContextOptionsBuilder<CodeflixCatalogDbContext>()
-      .UseInMemoryDatabase("integration-tests-db")
-      .Options
-    );
-
-    if (preserveData == false)
-      context.Database.EnsureDeleted();
-
-    return context;
   }
 }
