@@ -8,6 +8,8 @@ public abstract class BaseFixture
 {
   public BaseFixture() => Faker = new Faker("pt_BR");
 
+  public ApiClient ApiClient { get; set; }
+
   protected Faker Faker { get; set; }
 
   public CodeflixCatalogDbContext CreateDbContext()
