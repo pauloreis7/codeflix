@@ -1,7 +1,8 @@
-using Codeflix.Catalog.EndToEndTests.Base;
+using Codeflix.Catalog.EndToEndTests.Common;
 using System;
 
 namespace Codeflix.Catalog.EndToEndTests.Api.Category.Common;
+
 public class CategoryBaseFixture : BaseFixture
 {
   public CategoryPersistence Persistence;

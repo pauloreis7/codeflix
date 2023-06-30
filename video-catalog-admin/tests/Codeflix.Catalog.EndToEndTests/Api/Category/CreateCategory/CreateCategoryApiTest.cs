@@ -1,8 +1,11 @@
 using Codeflix.Catalog.Application.UseCases.Category.Common;
 using FluentAssertions;
-using System;
 using System.Threading.Tasks;
 using Xunit;
+using System.Net;
+using Codeflix.Catalog.Application.UseCases.Category.CreateCategory;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace Codeflix.Catalog.EndToEndTests.Api.Category.CreateCategory;
 
@@ -29,7 +32,7 @@ public class CreateCategoryApiTest
     response.Should().NotBeNull();
     response!.StatusCode.Should().Be(HttpStatusCode.Created);
     output.Should().NotBeNull();
-    output.Name.Should().Be(input.Name);
+    output!.Name.Should().Be(input.Name);
     output.Description.Should().Be(input.Description);
     output.IsActive.Should().Be(input.IsActive);
     output.Id.Should().NotBeEmpty();
