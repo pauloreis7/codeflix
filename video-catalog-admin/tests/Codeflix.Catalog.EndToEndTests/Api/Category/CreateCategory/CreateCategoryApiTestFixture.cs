@@ -11,7 +11,7 @@ public class CreateCategoryApiTestFixtureCollection
 
 public class CreateCategoryApiTestFixture : CategoryBaseFixture
 {
-  public CreateCategoryInput getExampleInput()
+  public CreateCategoryInput GetExampleInput()
     => new(
       GetValidCategoryName(),
       GetValidCategoryDescription(),

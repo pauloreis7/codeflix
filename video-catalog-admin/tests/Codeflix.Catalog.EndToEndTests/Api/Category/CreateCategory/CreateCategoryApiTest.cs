@@ -21,7 +21,7 @@ public class CreateCategoryApiTest
   [Trait("EndToEnd/API", "Category/Create - Endpoints")]
   public async Task CreateCategory()
   {
-    var input = _fixture.getExampleInput();
+    var input = _fixture.GetExampleInput();
 
     var (response, output) = await _fixture.ApiClient
       .Post<CategoryModelOutput>(
@@ -52,7 +52,7 @@ public class CreateCategoryApiTest
   [Trait("EndToEnd/API", "Category/Create - Endpoints")]
   public async Task ThrowWhenCantInstantiateAggregate()
   {
-    var input = _fixture.getExampleInput();
+    var input = _fixture.GetExampleInput();
     input.Name = "ab";
 
     var (response, output) = await _fixture.
