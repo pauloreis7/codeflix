@@ -18,7 +18,7 @@ public class CreateCategoryApiTest
     => _fixture = fixture;
 
   [Fact(DisplayName = nameof(CreateCategory))]
-  [Trait("EndToEnd/API", "Category - Endpoints")]
+  [Trait("EndToEnd/API", "Category/Create - Endpoints")]
   public async Task CreateCategory()
   {
     var input = _fixture.getExampleInput();
@@ -49,7 +49,7 @@ public class CreateCategoryApiTest
   }
 
   [Fact(DisplayName = nameof(ThrowWhenCantInstantiateAggregate))]
-  [Trait("EndToEnd/API", "Category - Endpoints")]
+  [Trait("EndToEnd/API", "Category/Create - Endpoints")]
   public async Task ThrowWhenCantInstantiateAggregate()
   {
     var input = _fixture.getExampleInput();

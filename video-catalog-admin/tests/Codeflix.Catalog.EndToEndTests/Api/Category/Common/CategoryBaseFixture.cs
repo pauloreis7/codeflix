@@ -1,4 +1,5 @@
 using Codeflix.Catalog.EndToEndTests.Common;
+using DomainEntity = Codeflix.Catalog.Domain.Entity;
 using System;
 
 namespace Codeflix.Catalog.EndToEndTests.Api.Category.Common;
@@ -35,4 +36,20 @@ public class CategoryBaseFixture : BaseFixture
   }
 
   public bool getRandomBoolean() => new Random().NextDouble() < 0.5;
+
+  public DomainEntity.Category GetExampleCategory()
+    => new(
+      GetValidCategoryName(),
+      GetValidCategoryDescription(),
+      getRandomBoolean()
+    );
+
+  public List<DomainEntity.Category> GetExampleCategoriesList(int listLength = 15)
+    => Enumerable.Range(1, listLength).Select(
+      _ => new DomainEntity.Category(
+          GetValidCategoryName(),
+          GetValidCategoryDescription(),
+          getRandomBoolean()
+        )
+      ).ToList();
 }
