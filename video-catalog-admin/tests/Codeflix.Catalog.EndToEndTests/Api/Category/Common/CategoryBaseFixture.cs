@@ -35,13 +35,13 @@ public class CategoryBaseFixture : BaseFixture
     return categoryDescription;
   }
 
-  public bool getRandomBoolean() => new Random().NextDouble() < 0.5;
+  public bool GetRandomBoolean() => new Random().NextDouble() < 0.5;
 
   public DomainEntity.Category GetExampleCategory()
     => new(
       GetValidCategoryName(),
       GetValidCategoryDescription(),
-      getRandomBoolean()
+      GetRandomBoolean()
     );
 
   public List<DomainEntity.Category> GetExampleCategoriesList(int listLength = 15)
@@ -49,7 +49,7 @@ public class CategoryBaseFixture : BaseFixture
       _ => new DomainEntity.Category(
           GetValidCategoryName(),
           GetValidCategoryDescription(),
-          getRandomBoolean()
+          GetRandomBoolean()
         )
       ).ToList();
 }

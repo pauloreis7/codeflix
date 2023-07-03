@@ -15,6 +15,6 @@ public class CreateCategoryApiTestFixture : CategoryBaseFixture
     => new(
       GetValidCategoryName(),
       GetValidCategoryDescription(),
-      getRandomBoolean()
+      GetRandomBoolean()
     );
 }
