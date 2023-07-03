@@ -38,9 +38,9 @@ public class GetCategoryApiTest
     output.CreatedAt.Should().Be(exampleCategory.CreatedAt);
   }
 
-  [Fact(DisplayName = nameof(ThrowWhenNotFound))]
+  [Fact(DisplayName = nameof(ErrorWhenNotFound))]
   [Trait("EndToEnd/API", "Category/Get - Endpoints")]
-  public async Task ThrowWhenNotFound()
+  public async Task ErrorWhenNotFound()
   {
     var randomGuid = Guid.NewGuid();
 

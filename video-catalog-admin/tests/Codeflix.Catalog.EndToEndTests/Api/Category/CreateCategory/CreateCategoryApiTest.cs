@@ -48,9 +48,9 @@ public class CreateCategoryApiTest
     dbCategory.CreatedAt.Should().NotBeSameDateAs(default);
   }
 
-  [Fact(DisplayName = nameof(ThrowWhenCantInstantiateAggregate))]
+  [Fact(DisplayName = nameof(ErrorWhenCantInstantiateAggregate))]
   [Trait("EndToEnd/API", "Category/Create - Endpoints")]
-  public async Task ThrowWhenCantInstantiateAggregate()
+  public async Task ErrorWhenCantInstantiateAggregate()
   {
     var input = _fixture.GetExampleInput();
     input.Name = "ab";
