@@ -47,4 +47,26 @@ public class CreateCategoryApiTest
     dbCategory.Id.Should().NotBeEmpty();
     dbCategory.CreatedAt.Should().NotBeSameDateAs(default);
   }
+
+  [Fact(DisplayName = nameof(ThrowWhenCantInstantiateAggregate))]
+  [Trait("EndToEnd/API", "Category - Endpoints")]
+  public async Task ThrowWhenCantInstantiateAggregate()
+  {
+    var input = _fixture.getExampleInput();
+    input.Name = "ab";
+
+    var (response, output) = await _fixture.
+      ApiClient.Post<ProblemDetails>(
+        "/categories",
+        input
+      );
+
+    response.Should().NotBeNull();
+    response!.StatusCode.Should().Be(HttpStatusCode.UnprocessableEntity);
+    output.Should().NotBeNull();
+    output!.Title.Should().Be("One or more validation errors ocurred");
+    output.Type.Should().Be("UnprocessableEntity");
+    output.Status.Should().Be((int)StatusCodes.Status422UnprocessableEntity);
+    output.Detail.Should().Be("Name should be at least 3 characters long");
+  }
 }
