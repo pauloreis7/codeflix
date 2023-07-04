@@ -1,5 +1,4 @@
 using Codeflix.Catalog.Application.Common;
-using Codeflix.Catalog.Application.UseCases.Category.ListCategories;
 using Codeflix.Catalog.Domain.SeedWork.SearchableRepository;
 using MediatR;
 
@@ -15,5 +14,8 @@ public class ListCategoriesInput
     string sort = "",
     SearchOrder dir = SearchOrder.Asc
   ) : base(page, perPage, search, sort, dir)
+  { }
+
+  public ListCategoriesInput() : base(1, 15, "", "", SearchOrder.Asc)
   { }
 }
