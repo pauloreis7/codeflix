@@ -1,15 +1,16 @@
-using Codeflix.Catalog.IntegrationTests.Application.UseCases.Category.Common;
+using Codeflix.Catalog.EndToEndTests.Api.Category.Common;
 using DomainEntity = Codeflix.Catalog.Domain.Entity;
 using Codeflix.Catalog.Domain.SeedWork.SearchableRepository;
+using Xunit;
 
-namespace Codeflix.Catalog.IntegrationTests.Application.UseCases.Category.ListCategories;
+namespace Codeflix.Catalog.EndToEndTests.Api.Category.ListCategories;
 
-[CollectionDefinition(nameof(ListCategoriesTestFixture))]
-public class ListCategoriesTestFixtureCollection
-  : ICollectionFixture<ListCategoriesTestFixture>
+[CollectionDefinition(nameof(ListCategoriesApiTestFixture))]
+public class ListCategoriesApiTestFixtureCollection
+  : ICollectionFixture<ListCategoriesApiTestFixture>
 { }
 
-public class ListCategoriesTestFixture : CategoryUseCasesBaseFixture
+public class ListCategoriesApiTestFixture : CategoryBaseFixture
 {
   public List<DomainEntity.Category> GetExampleCategoriesListWithNames(
     List<string> names
