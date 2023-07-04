@@ -1,5 +1,6 @@
 using Codeflix.Catalog.Application.UseCases.Category.Common;
 using Codeflix.Catalog.Application.UseCases.Category.CreateCategory;
+using Codeflix.Catalog.Application.UseCases.Category.UpdateCategory;
 using Codeflix.Catalog.Application.UseCases.Category.DeleteCategory;
 using Codeflix.Catalog.Application.UseCases.Category.GetCategory;
 using MediatR;
@@ -31,6 +32,20 @@ public class CategoriesController : ControllerBase
       new { output.Id },
       output
     );
+  }
+
+  [HttpPut("{id:guid}")]
+  [ProducesResponseType(typeof(CategoryModelOutput), StatusCodes.Status200OK)]
+  [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+  [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status422UnprocessableEntity)]
+  public async Task<IActionResult> Update(
+    [FromBody] UpdateCategoryInput input,
+    CancellationToken cancellationToken
+  )
+  {
+    var output = await _mediator.Send(input, cancellationToken);
+
+    return Ok(output);
   }
 
   [HttpGet("{id:guid}")]
