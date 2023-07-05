@@ -3,7 +3,7 @@ using Codeflix.Catalog.Api.Configurations;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
-    .AddAppConections()
+    .AddAppConections(builder.Configuration)
     .AddUseCases()
     .AddAndConfigureControllers();
 
