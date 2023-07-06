@@ -1,5 +1,5 @@
+using Codeflix.Catalog.Api.ApiModels.Category;
 using Codeflix.Catalog.Application.UseCases.Category.Common;
-using Codeflix.Catalog.Application.UseCases.Category.UpdateCategory;
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +23,7 @@ public class UpdateCategoryApiTest : IDisposable
     var exampleCategoriesList = _fixture.GetExampleCategoriesList(5);
     await _fixture.Persistence.InsertList(exampleCategoriesList);
     var exampleCategory = exampleCategoriesList[2];
-    var input = _fixture.GetExampleInput(exampleCategory.Id);
+    var input = _fixture.GetExampleInput();
 
     var (response, output) = await _fixture.ApiClient.Put<CategoryModelOutput>(
       $"/categories/{exampleCategory.Id}",
@@ -53,8 +53,7 @@ public class UpdateCategoryApiTest : IDisposable
     var exampleCategoriesList = _fixture.GetExampleCategoriesList(5);
     await _fixture.Persistence.InsertList(exampleCategoriesList);
     var exampleCategory = exampleCategoriesList[2];
-    var input = new UpdateCategoryInput(
-      exampleCategory.Id,
+    var input = new UpdateCategoryApiInput(
       _fixture.GetValidCategoryName()
     );
 
@@ -84,7 +83,7 @@ public class UpdateCategoryApiTest : IDisposable
   public async void ErrorWhenNotFound()
   {
     var randomGuid = Guid.NewGuid();
-    var input = _fixture.GetExampleInput(randomGuid);
+    var input = _fixture.GetExampleInput();
 
     var (response, output) = await _fixture.ApiClient.Put<ProblemDetails>(
       $"/categories/{randomGuid}",
@@ -108,7 +107,6 @@ public class UpdateCategoryApiTest : IDisposable
     await _fixture.Persistence.InsertList(exampleCategoriesList);
     var exampleCategory = exampleCategoriesList[2];
     var input = _fixture.GetExampleInput();
-    input.Id = exampleCategory.Id;
     input.Name = "ab";
 
     var (response, output) = await _fixture.ApiClient.Put<ProblemDetails>(
