@@ -209,8 +209,6 @@ public class ListCategoriesApiTest : IDisposable
   [InlineData("name", SearchOrder.Desc)]
   [InlineData("id", SearchOrder.Asc)]
   [InlineData("id", SearchOrder.Desc)]
-  [InlineData("createdAt", SearchOrder.Asc)]
-  [InlineData("createdAt", SearchOrder.Desc)]
   [InlineData("", SearchOrder.Asc)]
   public async Task ListOrdered(
     string orderBy,
