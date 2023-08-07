@@ -4,15 +4,12 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Codeflix.Catalog.EndToEndTests.Extensions.String;
+using Codeflix.Catalog.Api.Extensions.String;
+using Codeflix.Catalog.Api.Extensions.String;
+using Codeflix.Catalog.Api.Configurations.Policies;
 using Microsoft.AspNetCore.WebUtilities;
 
 namespace Codeflix.Catalog.EndToEndTests.Common;
-
-class SnakeCaseNamingPolicy : JsonNamingPolicy
-{
-  public override string ConvertName(string name) => name.ToSnakeCase();
-}
 
 public class ApiClient
 {
@@ -24,7 +21,7 @@ public class ApiClient
     _httpClient = httpClient;
     _defaultSerializeOptions = new JsonSerializerOptions
     {
-      PropertyNamingPolicy = new SnakeCaseNamingPolicy(),
+      PropertyNamingPolicy = new JsonSnakeCasePolicy(),
       PropertyNameCaseInsensitive = true
     };
   }
@@ -117,7 +114,10 @@ public class ApiClient
   {
     if (queryStringParametersObject is null) return route;
 
-    var parametersJson = JsonSerializer.Serialize(queryStringParametersObject);
+    var parametersJson = JsonSerializer.Serialize(
+      queryStringParametersObject,
+      _defaultSerializeOptions
+    );
     var parametersDictionary = Newtonsoft.Json.JsonConvert
       .DeserializeObject<Dictionary<string, string>>(parametersJson);
 
