@@ -1,5 +1,6 @@
 using FluentAssertions;
 using DomainEntity = Codeflix.Catalog.Domain.Entity;
+using Codeflix.Catalog.Domain.Exceptions;
 
 namespace Codeflix.Catalog.UnitTests.Domain.Entity.Genre;
 
@@ -27,6 +28,20 @@ public class GenreTest
     genre.CreatedAt.Should().NotBeSameDateAs(default);
     (genre.CreatedAt >= datetimeBefore).Should().BeTrue();
     (genre.CreatedAt <= datetimeAfter).Should().BeTrue();
+  }
+
+  [Theory(DisplayName = nameof(InstantiateThrowWhenNameEmpty))]
+  [Trait("Domain", "Genre - Aggregates")]
+  [InlineData("")]
+  [InlineData("  ")]
+  [InlineData(null)]
+  public void InstantiateThrowWhenNameEmpty(string? name)
+  {
+    var action =
+      () => new DomainEntity.Genre(name!);
+
+    action.Should().Throw<EntityValidationException>()
+      .WithMessage("Name should not be empty or null");
   }
 
   [Theory(DisplayName = nameof(InstantiateWithIsActive))]
@@ -95,5 +110,21 @@ public class GenreTest
     genre.Name.Should().Be(newName);
     genre.IsActive.Should().Be(oldIsActive);
     genre.CreatedAt.Should().NotBeSameDateAs(default);
+  }
+
+  [Theory(DisplayName = nameof(UpdateThrowWhenNameIsEmpty))]
+  [Trait("Domain", "Genre - Aggregates")]
+  [InlineData("")]
+  [InlineData("  ")]
+  [InlineData(null)]
+  public void UpdateThrowWhenNameIsEmpty(string? name)
+  {
+    var genre = _fixture.GetExampleGenre();
+
+    var action =
+      () => genre.Update(name!);
+
+    action.Should().Throw<EntityValidationException>()
+      .WithMessage("Name should not be empty or null");
   }
 }
