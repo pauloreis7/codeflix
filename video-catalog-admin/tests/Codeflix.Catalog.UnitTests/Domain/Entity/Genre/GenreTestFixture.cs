@@ -9,5 +9,6 @@ public class GenreTestFixtureCollection
 
 public class GenreTestFixture : BaseFixture
 {
-
+  public string GetValidName()
+    => Faker.Commerce.Categories(1)[0];
 }
