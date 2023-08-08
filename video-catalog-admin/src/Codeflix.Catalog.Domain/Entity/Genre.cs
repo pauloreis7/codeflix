@@ -8,11 +8,17 @@ public class Genre
   public bool IsActive { get; private set; }
   public DateTime CreatedAt { get; private set; }
 
+  public IReadOnlyList<Guid> Categories
+    => _categories.AsReadOnly();
+
+  private readonly List<Guid> _categories;
+
   public Genre(string name, bool isActive = true)
   {
     Name = name;
     IsActive = isActive;
     CreatedAt = DateTime.Now;
+    _categories = new List<Guid>();
 
     Validate();
   }
@@ -34,6 +40,13 @@ public class Genre
     Name = name;
     Validate();
   }
+
+  public void AddCategory(Guid categoryId)
+  {
+    _categories.Add(categoryId);
+    Validate();
+  }
+
 
   private void Validate()
     => DomainValidation.NotNullOrEmpty(Name, nameof(Name));
