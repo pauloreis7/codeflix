@@ -78,7 +78,7 @@ public class CreateCategoryTest
     output.Description.Should().Be("");
     output.IsActive.Should().BeTrue();
     output.Id.Should().NotBeEmpty();
-    output.CreatedAt.Should().NotBeSameDateAs(default(DateTime));
+    output.CreatedAt.Should().NotBeSameDateAs(default);
   }
 
   [Fact(DisplayName = nameof(CreateCategoryWithOnlyNameAndDescription))]

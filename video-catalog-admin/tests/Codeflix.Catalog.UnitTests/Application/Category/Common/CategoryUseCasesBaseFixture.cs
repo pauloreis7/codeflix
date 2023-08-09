@@ -2,7 +2,7 @@ using Codeflix.Catalog.Application.Interfaces;
 using Codeflix.Catalog.Domain.Repository;
 using DomainEntity = Codeflix.Catalog.Domain.Entity;
 using Moq;
-using Codeflix.Catalog.UnitTests.Domain.Entity.Common;
+using Codeflix.Catalog.UnitTests.Common;
 
 namespace Codeflix.Catalog.UnitTests.Application.Category.Common;
 
@@ -31,9 +31,6 @@ public abstract class CategoryUseCasesBaseFixture : BaseFixture
       categoryDescription = categoryDescription[..10_000];
     return categoryDescription;
   }
-
-  public bool GetRandomBoolean()
-    => new Random().NextDouble() < 0.5;
 
   public DomainEntity.Category GetExampleCategory()
     => new(

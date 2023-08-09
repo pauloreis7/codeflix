@@ -174,7 +174,7 @@ public class GenreTest
 
     genre.RemoveCategory(exampleGuid);
 
-    genre.Categories.Should().HaveCount(4);
+    genre.Categories.Should().HaveCount(3);
     genre.Categories.Should().NotContain(exampleGuid);
   }
 
@@ -185,7 +185,6 @@ public class GenreTest
     var genre = _fixture.GetExampleGenre(
       categoriesIdsList: new List<Guid>()
       {
-        Guid.NewGuid(),
         Guid.NewGuid(),
         Guid.NewGuid(),
         Guid.NewGuid(),
