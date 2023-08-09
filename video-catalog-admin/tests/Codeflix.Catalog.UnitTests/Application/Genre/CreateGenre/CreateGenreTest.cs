@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Moq;
 using DomainEntity = Codeflix.Catalog.Domain.Entity;
+using UseCase = Codeflix.Catalog.Application.UseCases.Genre.CreateGenre;
 
 namespace Codeflix.Catalog.UnitTests.Application.Genre.CreateGenre;
 
@@ -16,9 +17,9 @@ public class CreateGenreTest
     [Trait("Application", "CreateGenre - Use Cases")]
     public async Task Create()
     {
-        var genreRepositoryMock = _fixture.GetGenreRepositoryMock();
-        var unitOfWorkMock = _fixture.GetUnitOfWorkMock();
-        var useCase = new CreateGenre(
+        var genreRepositoryMock = CreateGenreTestFixture.GetGenreRepositoryMock();
+        var unitOfWorkMock = CreateGenreTestFixture.GetUnitOfWorkMock();
+        var useCase = new UseCase.CreateGenre(
             genreRepositoryMock.Object,
             unitOfWorkMock.Object
         );
@@ -41,6 +42,7 @@ public class CreateGenreTest
         output.Id.Should().NotBeEmpty();
         output.Name.Should().Be(input.Name);
         output.IsActive.Should().Be(input.IsActive);
+        output.Categories.Should().HaveCount(0);
         output.CreatedAt.Should().NotBeSameDateAs(default);
         (output.CreatedAt >= datetimeBefore).Should().BeTrue();
         (output.CreatedAt <= datetimeAfter).Should().BeTrue();

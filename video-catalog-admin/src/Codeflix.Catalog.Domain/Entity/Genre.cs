@@ -1,8 +1,9 @@
 using Codeflix.Catalog.Domain.Validation;
+using Codeflix.Catalog.Domain.SeedWork;
 
 namespace Codeflix.Catalog.Domain.Entity;
 
-public class Genre
+public class Genre : AggregateRoot
 {
   public string Name { get; private set; }
   public bool IsActive { get; private set; }
