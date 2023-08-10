@@ -28,15 +28,11 @@ public class CreateGenre : ICreateGenre
       request.IsActive
     );
 
+    request.CategoriesIds?.ForEach(genre.AddCategory);
+
     await _genreRepository.Insert(genre, cancellationToken);
     await _unitOfWork.Commit(cancellationToken);
 
-    return new GenreModelOutput(
-      genre.Id,
-      genre.Name,
-      genre.IsActive,
-      genre.CreatedAt,
-      genre.Categories
-    );
+    return GenreModelOutput.FromGenre(genre);
   }
 }

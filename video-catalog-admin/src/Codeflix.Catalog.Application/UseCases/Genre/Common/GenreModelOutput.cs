@@ -1,3 +1,5 @@
+using DomainEntity = Codeflix.Catalog.Domain.Entity;
+
 namespace Codeflix.Catalog.Application.UseCases.Genre.Common;
 
 public class GenreModelOutput
@@ -26,4 +28,14 @@ public class GenreModelOutput
     CreatedAt = createdAt;
     Categories = categories;
   }
+
+  public static GenreModelOutput FromGenre(
+    DomainEntity.Genre genre
+  ) => new(
+    genre.Id,
+    genre.Name,
+    genre.IsActive,
+    genre.CreatedAt,
+    genre.Categories
+  );
 }
