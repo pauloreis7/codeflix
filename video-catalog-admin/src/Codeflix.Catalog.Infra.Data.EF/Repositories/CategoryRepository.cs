@@ -80,4 +80,10 @@ public class CategoryRepository : ICategoryRepository
 
     return orderedQuery.ThenBy(item => item.CreatedAt);
   }
+
+  public Task<IReadOnlyList<Guid>> GetIdsListByIds(
+    List<Guid> ids,
+    CancellationToken cancellationToken
+   )
+    => throw new NotImplementedException();
 }
