@@ -1,8 +1,5 @@
-using Codeflix.Catalog.Application.Interfaces;
 using Codeflix.Catalog.UnitTests.Application.Genre.Common;
 using Codeflix.Catalog.Application.UseCases.Genre.CreateGenre;
-using Codeflix.Catalog.Domain.Repository;
-using Moq;
 
 namespace Codeflix.Catalog.UnitTests.Application.Genre.CreateGenre;
 
@@ -35,13 +32,4 @@ public class CreateGenreTestFixture : GenreUseCasesBaseFixture
       categoriesIds
     );
   }
-
-  public static Mock<IGenreRepository> GetGenreRepositoryMock()
-    => new();
-
-  public static Mock<IUnitOfWork> GetUnitOfWorkMock()
-    => new();
-
-  public static Mock<ICategoryRepository> GetCategoryRepositoryMock()
-      => new();
 }
