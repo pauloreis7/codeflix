@@ -10,7 +10,7 @@ public class UpdateGenreTest
   private readonly UpdateGenreTestFixture _fixture;
 
   public UpdateGenreTest(UpdateGenreTestFixture fixture)
-      => _fixture = fixture;
+    => _fixture = fixture;
 
   [Fact(DisplayName = nameof(UpdateGenre))]
   [Trait("Application", "UpdateGenre - Use Cases")]
@@ -32,6 +32,7 @@ public class UpdateGenreTest
       UpdateGenreTestFixture.GetCategoryRepositoryMock().Object
     );
     var input = new UseCase.UpdateGenreInput(
+      exampleGenre.Id,
       newNameExample,
       newIsActive
     );
